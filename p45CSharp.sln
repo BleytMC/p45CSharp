@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_OperatorsOverloading", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09_ShopTask", "09_ShopTask\09_ShopTask.csproj", "{5375C701-61D2-4E27-A667-D2365B93044C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10_PlaneHomework", "10_PlaneHomework\10_PlaneHomework.csproj", "{191190D0-F7F2-4231-BEE5-33F5F9FD2CED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{5375C701-61D2-4E27-A667-D2365B93044C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5375C701-61D2-4E27-A667-D2365B93044C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5375C701-61D2-4E27-A667-D2365B93044C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191190D0-F7F2-4231-BEE5-33F5F9FD2CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191190D0-F7F2-4231-BEE5-33F5F9FD2CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191190D0-F7F2-4231-BEE5-33F5F9FD2CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191190D0-F7F2-4231-BEE5-33F5F9FD2CED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
