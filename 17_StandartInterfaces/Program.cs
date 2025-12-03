@@ -23,21 +23,29 @@
 //Console.WriteLine(studentCard1);
 
 
-Student student1 = new Student
+//Student student1 = new Student
+//{
+//    FirstName = "Joey",
+//    LastName = "Finch",
+//    BirthDate = new DateTime(1996, 11, 30),
+//    StudentCard = new StudentCard
+//    {
+//        Number = 258322,
+//        Series = "AA"
+//    }
+//};
+
+//Student student2 = (Student)student1.Clone();
+
+//student2.FirstName = "AAAAAAAA";
+//student2.StudentCard.Number = 9999;
+
+//Console.WriteLine(student1);
+
+
+Auditory auditory = new Auditory();
+
+foreach(Student student in auditory)
 {
-    FirstName = "Joey",
-    LastName = "Finch",
-    BirthDate = new DateTime(1996, 11, 30),
-    StudentCard = new StudentCard
-    {
-        Number = 258322,
-        Series = "AA"
-    }
-};
-
-Student student2 = (Student)student1.Clone();
-
-student2.FirstName = "AAAAAAAA";
-student2.StudentCard.Number = 9999;
-
-Console.WriteLine(student1);
+    Console.WriteLine(student);
+}

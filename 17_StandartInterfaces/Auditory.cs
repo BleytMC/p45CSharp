@@ -2,7 +2,7 @@
 
 namespace _17_StandartInterfaces
 {
-    class Auditory
+    class Auditory : IEnumerable
     {
         Student[] students =
         {
@@ -69,6 +69,11 @@ namespace _17_StandartInterfaces
         public override string ToString()
         {
             return string.Join("\n", students.Select(s => s.ToString()));
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return new AuditoryEnumerator(students);
         }
     }
 }

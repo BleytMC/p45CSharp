@@ -1,8 +1,11 @@
-﻿namespace _19_VectorHomework
+﻿using _23_GenericVector;
+using System.Collections;
+
+namespace _19_VectorHomework
 {
-    class Vector
+    class Vector<T> : IEnumerable
     {
-        int[] mass;
+        T[] mass;
         int count;
 
         public int Count { get { return count; } }
@@ -10,10 +13,10 @@
         public Vector()
         {
             count = 0;
-            mass = new int[count];
+            mass = new T[count];
         }
 
-        public Vector(int[] mass)
+        public Vector(T[] mass)
         {
             count = mass.Length;
             this.mass = mass;
@@ -24,30 +27,30 @@
             return string.Join(", ", mass);
         }
 
-        public void PushBack(int value)
+        public void PushBack(T value)
         {
-            int[] arr = new int[count + 1];
+            T[] arr = new T[count + 1];
             for (int i = 0; i < count; i++) arr[i] = mass[i];
             arr[count] = value;
             mass = arr;
             count++;
         }
 
-        public int PopBack()
+        public T PopBack()
         {
-            int [] arr = new int[count - 1];
+            T[] arr = new T[count - 1];
             for (int i = 0; i < count - 1; i++) arr[i] = mass[i];
-            int res = mass[count - 1];
+            T res = mass[count - 1];
             mass = arr;
             count--;
             return res;
         }
 
-        public void Insert(int index, int value)
+        public void Insert(int index, T value)
         {
-            if(index > count || index < 0) throw new IndexOutOfRangeException();
-            int[] arr = new int[count + 1];
-            for(int i = 0; i < count + 1; i++)
+            if (index > count || index < 0) throw new IndexOutOfRangeException();
+            T[] arr = new T[count + 1];
+            for (int i = 0; i < count + 1; i++)
             {
                 if (i < index) arr[i] = mass[i];
                 else if (i > index) arr[i] = mass[i - 1];
@@ -59,9 +62,9 @@
 
         public void Erase(int index)
         {
-            if(index >= count || index < 0) throw new IndexOutOfRangeException();
-            int[] arr = new int[count - 1];
-            for(int i = 0; i < count - 1; i++)
+            if (index >= count || index < 0) throw new IndexOutOfRangeException();
+            T[] arr = new T[count - 1];
+            for (int i = 0; i < count - 1; i++)
             {
                 if (i < index) arr[i] = mass[i];
                 else arr[i] = mass[i + 1];
@@ -75,7 +78,7 @@
             return count == 0;
         }
 
-        public int At(int index)
+        public T At(int index)
         {
             if (index >= count || index < 0) throw new IndexOutOfRangeException();
             return mass[index];
@@ -83,18 +86,23 @@
 
         public void Reverse()
         {
-            int[] arr = new int[count];
+            T[] arr = new T[count];
             for (int i = 0; i < count; i++) arr[i] = mass[count - i - 1];
             mass = arr;
         }
 
         public void Clear()
         {
-            mass = new int[0];
+            mass = new T[0];
             count = 0;
         }
 
-        public int this[int index]
+        public IEnumerator GetEnumerator()
+        {
+            return new VectorEnumerator<T>(mass);
+        }
+
+        public T this[int index]
         {
             get { return mass[index]; }
         }
