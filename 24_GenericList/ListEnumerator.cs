@@ -2,7 +2,7 @@
 
 namespace _24_GenericList
 {
-    class ListEnumerator<T> : IEnumerator
+    class ListEnumerator<T> : IEnumerator<T>
     {
         Element<T> head;
         Element<T> current;
@@ -13,29 +13,20 @@ namespace _24_GenericList
             current = null;
         }
 
-        public object Current
-        {
-            get { return current; }
-        }
+        public T Current => current.Value;
+        object IEnumerator.Current => Current;
 
         public bool MoveNext()
         {
-            if (current == null && head != null)
-            {
-                current = head;
-                return true;
-            }
-            else if (current?.Next != null)
-            {
-                current = current.Next;
-                return true;
-            }
-            return false;
+            current = current == null ? head : current.Next;
+            return current != null;
         }
 
         public void Reset()
         {
             current = null;
         }
+
+        public void Dispose() { }
     }
 }

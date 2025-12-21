@@ -2,7 +2,7 @@
 
 namespace _24_GenericList
 {
-    class List<T> : IEnumerable
+    class List<T> : IEnumerable<T>
     {
         Element<T> head;
         Element<T> tail;
@@ -39,7 +39,13 @@ namespace _24_GenericList
 
         public void RemoveTail()
         {
-            if (tail == null) throw new IndexOutOfRangeException();
+            if (tail == null)
+                throw new IndexOutOfRangeException();
+
+            if (head == tail)
+            {
+                head = tail = null;
+            }
             else
             {
                 tail = tail.Prev;
@@ -49,7 +55,13 @@ namespace _24_GenericList
 
         public void RemoveHead()
         {
-            if(head == null) throw new IndexOutOfRangeException();
+            if (head == null)
+                throw new IndexOutOfRangeException();
+
+            if (head == tail)
+            {
+                head = tail = null;
+            }
             else
             {
                 head = head.Next;
@@ -57,9 +69,14 @@ namespace _24_GenericList
             }
         }
 
-        public IEnumerator GetEnumerator()
+        public IEnumerator<T> GetEnumerator()
         {
             return new ListEnumerator<T>(head);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
