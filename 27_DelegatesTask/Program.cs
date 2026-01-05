@@ -10,6 +10,17 @@ void FullNameUpper(Student student)
     Console.WriteLine($"\t{student.FirstName.ToUpper()}\t\t{student.LastName.ToUpper()}");
 }
 
+void MyFindAll(int[] arr, MyPredicate<int> predicate)
+{
+    foreach(int i in arr) if(predicate(i)) Console.Write($"{i} ");
+    Console.WriteLine();
+}
+
+bool OnlyEven(int i)
+{
+    return i % 2 == 0;
+}
+
 Student[] students = [
     new Student("Ivan", "Petrenko"),
     new Student("Olena", "Shevchenko"),
@@ -25,17 +36,8 @@ MyAction<Student> myAction = FullNameUpper;
 
 MyForeach(students, myAction);
 
+int[] arr = { 42, 7, 89, 15, 63, 0, 100, 28, 54, 91 };
 
-// Готові делегати в .NET
+MyPredicate<int> myPredicate = OnlyEven;
 
-// Action<T>
-// public delegate void Action<in T>(T obj);
-
-// Func<T, TResult>
-// public delegate TResult Func<in T, out TResult>(T arg);
-
-// Predicate<T>
-// public delegate bool Predicate<in T>(T obj);
-
-// Comparison<T>
-// public delegate int Comparison<in T>(T x, T y);
+MyFindAll(arr, myPredicate);
