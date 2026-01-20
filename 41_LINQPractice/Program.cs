@@ -35,9 +35,27 @@
 
 //foreach (var item in query) Console.WriteLine(item);
 
+// 2
+
+//var query = from car in cars where car.Contains('r') || car.Contains('R') select car;
+
+//foreach (var item in query) Console.WriteLine(item);
+
 // 3
 
 //var query = from car in cars where car.Length == 5 select car;
+
+//foreach (var item in query) Console.WriteLine(item);
+
+// 4
+
+//var query = from car in cars where car.Length > 5 select car;
+
+//foreach (var item in query) Console.WriteLine(item);
+
+// 5
+
+//var query = from car in cars where car.Length < 7 && (car.Contains('r') || car.Contains('R')) select car;
 
 //foreach (var item in query) Console.WriteLine(item);
 
@@ -75,6 +93,26 @@
 
 // group by
 
+// 1
+
+//var query = from car in cars group car by car[0];
+
+//foreach (var group in query)
+//{
+//    Console.WriteLine(group.Key);
+//    foreach (string car in group) Console.WriteLine(car);
+//}
+
+// 2
+
+//var query = from car in cars orderby car group car by car[0];
+
+//foreach (var group in query)
+//{
+//    Console.WriteLine(group.Key);
+//    foreach (string car in group) Console.WriteLine(car);
+//}
+
 // 3
 
 //var query = from car in cars group car by car.Length;
@@ -97,3 +135,22 @@
 //    Console.WriteLine(group.Key);
 //    foreach(string car in group) Console.WriteLine(car);
 //}
+
+
+// 1
+
+//var query = cars.Take(9);
+
+//foreach (var item in query) Console.WriteLine(item);
+
+// 3
+
+var query = cars.Take(9).Where(car => car.Length < 12);
+
+foreach (var item in query) Console.WriteLine(item);
+
+// 4
+
+//var query = cars.Skip(4).Take(5);
+
+//foreach (var item in query) Console.WriteLine(item);
