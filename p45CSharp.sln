@@ -97,6 +97,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "48_SerializeConsoleApp", "4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "49_DeserializeConsoleApp", "49_DeserializeConsoleApp\49_DeserializeConsoleApp.csproj", "{FA8B1A47-9F27-4379-AC0B-FE2FF01E564C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "50_WFHM", "50_WFHM\50_WFHM.csproj", "{DC532B0A-7AEF-4A42-B6B6-EE990B942075}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -291,6 +293,10 @@ Global
 		{FA8B1A47-9F27-4379-AC0B-FE2FF01E564C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA8B1A47-9F27-4379-AC0B-FE2FF01E564C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA8B1A47-9F27-4379-AC0B-FE2FF01E564C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC532B0A-7AEF-4A42-B6B6-EE990B942075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC532B0A-7AEF-4A42-B6B6-EE990B942075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC532B0A-7AEF-4A42-B6B6-EE990B942075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC532B0A-7AEF-4A42-B6B6-EE990B942075}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
