@@ -157,3 +157,67 @@ var query5 = from d in departments
 
 Console.WriteLine("\n5");
 foreach(var e in query5) Console.WriteLine(e);
+
+// 6
+
+var query6 = from d in departments
+             join e in employees on d.Id
+             equals e.DepId
+             orderby e.FirstName
+             where d.Country == "Ukraine"
+             select new
+             {
+                 e.FirstName,
+                 e.LastName,
+                 d.City
+             };
+
+Console.WriteLine("\n6");
+foreach (var e in query6) Console.WriteLine(e);
+
+// 7
+
+var query7 = from d in departments
+             join e in employees on d.Id
+             equals e.DepId
+             group e by e.Age;
+
+Console.WriteLine("\n7");
+foreach(var group in query7)
+{
+    Console.WriteLine($"{group.Key} - {group.Count()}");
+}
+
+// 8
+
+var query8 = from d in departments
+             join e in employees on d.Id
+             equals e.DepId
+             orderby e.FirstName
+             group e by d.Country;
+
+Console.WriteLine("\n8");
+foreach (var group in query8)
+{
+    Console.WriteLine($"{group.Key} - {group.Count()}");
+    foreach (var e in group) Console.WriteLine(e);
+    Console.WriteLine();
+}
+
+// 9
+
+float average = (float)employees.Average(e => e.Age);
+
+Console.WriteLine("9");
+Console.WriteLine(average);
+
+// 10
+
+int count = (from d in departments
+            join e in employees on d.Id
+            equals e.DepId
+            where d.Country == "Ukraine"
+            select e).Count();
+
+Console.WriteLine("\n10");
+Console.WriteLine(count);
