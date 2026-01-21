@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>_36_DLLTest</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="35_ClassLib">
+      <HintPath>..\35_ClassLib\bin\Debug\net9.0\35_ClassLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
